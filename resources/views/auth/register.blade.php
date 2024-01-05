@@ -24,15 +24,15 @@
       <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
         <div class="card z-index-0">
           <div class="card-body">
-            <form role="form">
+            <form id="registerForm">
               <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                <input type="text"  name="name" class="form-control" required placeholder="Name" aria-label="Name">
               </div>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                <input type="email"  name="email" class="form-control" required placeholder="Email" aria-label="Email">
               </div>
               <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                <input type="password"  name="password" class="form-control" minlength="8" required placeholder="Password" aria-label="Password">
               </div>
               <div class="form-check form-check-info text-start">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -41,7 +41,7 @@
                 </label>
               </div>
               <div class="text-center">
-                <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Register</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Register</button>
               </div>
               <p class="text-sm mt-3 mb-0">Already have an account? <a href="/login" class="text-dark font-weight-bolder">Login</a></p>
             </form>
@@ -53,6 +53,26 @@
 </section>
 @endsection
 
-@push('after_style')
+@push('after_script')
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('#registerForm').submit(function (event) {
+                event.preventDefault();
+                axios.post('/api/register', new FormData(this))
+                .then(response => {
+                    localStorage.setItem('access_token', response.data.access_token);
+                    // Handle successful login
+                    console.log(response.data);
+                    window.location.href = '/';
+                })
+                .catch(error => {
+                    // Handle login error
+                    console.error(error.response.data);
+                });
+            });
+        });
+    </script>
 @endpush

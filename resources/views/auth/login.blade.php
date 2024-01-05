@@ -20,10 +20,10 @@
               <div class="card-body">
                 <form id="loginForm">
                   <div class="mb-3">
-                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                    <input type="email" name="email" class="form-control form-control-lg" required placeholder="Email" aria-label="Email">
                   </div>
                   <div class="mb-3">
-                    <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                    <input type="password" name="password" class="form-control form-control-lg" minlength="8" required placeholder="Password" aria-label="Password">
                   </div>
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="rememberMe">
@@ -56,7 +56,7 @@
   </section>
 @endsection
 
-@push('after_style')
+@push('after_script')
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
