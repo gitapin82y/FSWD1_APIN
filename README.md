@@ -26,3 +26,13 @@ https://documenter.getpostman.com/view/12312975/2s9YsGitfJ
 ## Hasil Test Case Beserta Penjelasan
 
 https://drive.google.com/file/d/15DCJMiHO7FAttD81-EH935HCyXrLwhbs/view?usp=sharing
+
+## Instalasi and Run project
+
+git clone https://github.com/gitapin82y/FSWD1_APIN.git
+copy .env.example .env
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan serve
