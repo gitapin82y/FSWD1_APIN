@@ -64,12 +64,9 @@
                 axios.post('/api/register', new FormData(this))
                 .then(response => {
                     localStorage.setItem('access_token', response.data.access_token);
-                    // Handle successful login
-                    console.log(response.data);
                     window.location.href = '/';
                 })
                 .catch(error => {
-                    // Handle login error
                     console.error(error.response.data);
                 });
             });
