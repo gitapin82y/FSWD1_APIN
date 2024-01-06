@@ -13,11 +13,12 @@ Dalam konteks pengembangan aplikasi web dan API manajemen karyawan, sebuah proye
 
 ## Spesifikasi dan Library
 
-1. Laravel 8.83
+1. Laravel 8
 2. Axios
 3. Datatable Yajra
-4. Sweetalert
-5. Blade Master Template : Argon Dashboard
+4. Sweetalert 2
+5. Jquery 3.6
+6. Blade Master Template : Argon Dashboard
 
 ## Dokumentasi API
 
@@ -29,10 +30,11 @@ https://drive.google.com/file/d/15DCJMiHO7FAttD81-EH935HCyXrLwhbs/view?usp=shari
 
 ## Instalasi and Run project
 
-git clone https://github.com/gitapin82y/FSWD1_APIN.git
-copy .env.example .env
-composer install
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
-php artisan serve
+1. git clone https://github.com/gitapin82y/FSWD1_APIN.git
+2. cd FSWD1_APIN
+3. cp .env.example .env
+4. composer install
+5. php artisan key:generate
+6. php artisan migrate
+7. php artisan db:seed
+8. php artisan serve
