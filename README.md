@@ -13,7 +13,7 @@ Dalam konteks pengembangan aplikasi web dan API manajemen karyawan, sebuah proye
 
 ## Spesifikasi dan Library
 
-1. Laravel 8
+1. Laravel
 2. Axios
 3. Datatable Yajra
 4. Sweetalert 2
